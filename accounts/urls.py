@@ -1,8 +1,7 @@
 from django.urls import path
 
-from AVII.accounts import signupviews
-
 from . import loginviews
+from . import signupviews
 
 urlpatterns = [
     path("register", signupviews.register, name="register"),
