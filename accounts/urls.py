@@ -1,9 +1,11 @@
 from django.urls import path
 
-from . import views
+from AVII.accounts import signupviews
+
+from . import loginviews
 
 urlpatterns = [
-    path("register", views.register, name="register"),
-    path("login", views.login, name="login"),
-    path("logout", views.logout, name="logout")
+    path("register", signupviews.register, name="register"),
+    path("login", loginviews.login, name="login"),
+    path("logout", loginviews.logout, name="logout")
 ]
