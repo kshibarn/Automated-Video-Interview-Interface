@@ -30,4 +30,4 @@ def register(request):
 
         return redirect('/')
     else:
-        return render(request, "login.html")
+        return render(request, "register.html")
