@@ -1,0 +1,165 @@
+{
+    "questions" : [
+        {
+            "id": 1,
+            "question": "Tell me about yourselves",
+            "type": "behavioural"
+        },
+
+        {
+            "id": 2,
+            "question": "What motivated you to apply for this position?",
+            "type": "behavioural"
+        },
+
+        {
+            "id": 3,
+            "question": "What experience do you have that makes you a strong candidate for this position?",
+            "type": "behavioural"
+        },
+
+        {
+            "id": 4,
+            "question": "What would you say are your greatest strengths?",
+            "type": "behavioural"
+        },
+
+        {
+            "id": 5,
+            "question": "How do you handle difficult situations?",
+            "type": "behavioural"
+        },
+
+        {
+            "id": 6,
+            "question": "How do you handle working in a team environment?",
+            "type": "behavioural"
+        },
+
+        {
+            "id": 7,
+            "question": "How do you handle working under tight deadlines?",
+            "type": "behavioural"
+        },
+
+        {
+            "id": 8,
+            "question": "Describe a time when you overcame a difficult challenge.",
+            "type": "behavioural"
+        },
+
+        {
+            "id": 9,
+            "question": "What would you do if you were assigned a task you felt was beyond your abilities?",
+            "type": "behavioural"
+        },
+
+        {
+            "id": 10,
+            "question": "What do you believe are the most important components of a successful project?",
+            "type": "behavioural"
+        },
+
+        {
+            "id": 11,
+            "question": "How do you prioritize tasks when you have multiple assignments?",
+            "type": "behavioural"
+        },
+
+        {
+            "id": 12,
+            "question": "How do you stay organized when facing a hectic workload?",
+            "type": "behavioural"
+        },
+
+        {
+            "id": 13,
+            "question": "What do you think sets you apart from other candidates?",
+            "type": "behavioural"
+        },
+
+        {
+            "id": 14,
+            "question": "How do you handle feedback from supervisors?",
+            "type": "behavioural"
+        },
+
+        {
+            "id": 15,
+            "question": "How do you handle working with people who have different opinions?",
+            "type": "behavioural"
+        },
+
+        {
+            "id": 16,
+            "question": "Describe a time when you had to adjust quickly to changes at work.",
+            "type": "behavioural"
+        },
+
+        {
+            "id": 17,
+            "question": "How do you handle working in a fast-paced environment?",
+            "type": "behavioural"
+        },
+
+        {
+            "id": 18,
+            "question": "What strategies do you use to stay motivated?",
+            "type": "behavioural"
+        },
+
+        {
+            "id": 19,
+            "question": "How do you handle criticism?",
+            "type": "behavioural"
+        },
+
+        {
+            "id": 20,
+            "question": "How do you go about learning new skills?",
+            "type": "behavioural"
+        },
+
+        {
+            "id": 21,
+            "question": "Describe a time when you had to work with limited resources.",
+            "type": "behavioural"
+        },
+
+        {
+            "id": 22,
+            "question": "What do you think is the key to successful communication?",
+            "type": "behavioural"
+        },
+
+        {
+            "id": 23,
+            "question": "How do you ensure that you remain professional when dealing with difficult clients?",
+            "type": "behavioural"
+        },
+
+        {
+            "id": 24,
+            "question": "How would you handle a situation in which you disagreed with a supervisor or team member?",
+            "type": "behavioural"
+        },
+
+        {
+            "id": 25,
+            "question": "What challenges are you looking to overcome in this position?",
+            "type": "behavioural"
+        },
+
+        {
+            "id": 26,
+            "question": "What would you like to accomplish in this role?",
+            "type": "behavioural"
+        },
+
+        {
+            "id": 27,
+            "question": "How would you deal with a situation when you are a project manager and there is an employee in your team who is distracted in meetings and not showing the efforts they used to give in previous projects?",
+            "type": "behavioural"
+        }
+    ]
+}

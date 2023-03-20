@@ -85,14 +85,6 @@ p a:hover::after
 {
 	opacity: 0.2;
 }
-::selection
-{
-	
-}
-p::selection
-{
-	
-}
 h1{font-size: 72px;}
 h2{font-size: 48px;}
 h3{font-size: 36px;}
