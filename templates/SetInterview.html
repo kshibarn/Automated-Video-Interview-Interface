@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +11,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
+
+<script type="application/json" src="{% static 'Interview-Questions/questions.json' %}"></script>
+<script>
+    fetch('questions.json')
+        .then(response => response.json())
+        .then(data => {
+            const questionList = document.getElementById('question-box');
+
+            data.questions.forEach(question => {
+                const listItem = document.createElement('li');
+                const questionText = document.createTextNode(question.question);
+
+                listItem.appendChild(questionText);
+                questionList.appendChild(listItem);
+            });
+        })
+        .catch(error => console.error(error));
+</script>
+
 <body>
     <div class="wrapper">
 
@@ -52,14 +72,19 @@
                 <div class="question-bank">
 
                     <ol class="question-template" data-questionTemplate>
+                        {% for question in questions %}
                         <li class="question-box">
-                            <div>what is MergSort ? Explain the algorithm and time complexity.</div>
+                            <div>{{ question.question }}</div>
                             <div>3 min</div>
                         </li>
+                        {% endfor %}
+
+                        {% for question in questions %}
                         <li class="question-box">
-                            <div>difference between callback function & call by reference function.</div>
+                            <div>{{ question.question }}</div>
                             <div>2.5 min</div>
                         </li>
+                        {% endfor %}
                     </ol>
                 </div>
 
@@ -83,6 +108,6 @@
 
     </div>
 
-    <script src="{% static 'javascript/SetInterview.js' %}""></script>
+    <script src="{% static 'javascript/SetInterview.js' %}"></script>
 </body>
 </html>

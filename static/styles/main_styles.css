@@ -326,3 +326,78 @@ h1, h2, h3, h4, h5, h6
 {
 	color: rgba(0,0,0,0.5);
 }
+
+.btn {
+	margin-top: 25px;
+	padding-left: 35px;
+	padding-right: 35px; 
+	color: rgba(0, 167, 221, 1);
+	font-weight: 900;
+	font-size: 30px;
+}
+.btn:hover {
+	color: rgba(0, 167, 250, 1);
+}
+
+/*********************************
+5. Home
+*********************************/
+
+h2 { color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 80px; font-weight: 800; line-height: 40px; margin: 80px 0 44px; text-align: center; }
+
+p { color: #f8f8f8; font-family: 'Raleway',sans-serif; font-size: 35px; font-weight: 500; line-height: 50px; margin: 0 0 24px; }
+
+.btn {
+	margin-top: 25px;
+	padding-left: 35px;
+	padding-right: 35px; 
+	color: rgba(0, 167, 221, 1);
+	font-weight: 900;
+	font-size: 30px;
+}
+.btn:hover {
+	color: rgba(0, 167, 250, 1);
+}
+
+.transBg {
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.5);
+}
+ 
+.container-fluid{
+  height:100%;
+  display:table;
+  width: 100%;
+  padding: 0;
+}
+ 
+.row-fluid {height: 100%; display:table-cell; vertical-align: middle;}
+
+.centering {
+  float:none;
+  margin:0 auto;
+}
+
+.carouselText {
+	text-align: center;
+}
+
+#myCarousel { 
+	width: 100%;
+	overflow: hidden;
+	padding-top: 9px;
+	padding-bottom: 9px;
+}
+#myCarousel ul {
+	list-style: none;
+	position: relative;
+	float: left;
+	display: block;
+	left: 50%;
+}
+#myCarousel ul li {
+	position: relative;
+	float: none;
+	display: block;
+	right: 50%;
+}

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,9 +21,14 @@
 
         <div class="interview-container">
             <div class="question-display-container">
-                <p>Question no. <span>1</span> </p>
-                <p>What is Merge Sort? Explain its
-                     Algorithm with time complexity and space complexity .</p>
+
+              <li class="question-box">
+                {% for question in questions %}
+                <div>Question no. <span>{{ question.id }}</span> </div>
+                <div>{{ question.question }}</div>
+              {% endfor %}
+              </li>
+
             </div>
 
             <div class="btn-timer-container">
@@ -68,5 +74,23 @@
           }, 1000);
         }
       </script>
+
+      <script type="application/json" src="{% static 'Interview-Questions/questions.json' %}"></script>
+      <script>
+        fetch('questions.json')
+            .then(response => response.json())
+            .then(data => {
+                const questionList = document.getElementById('question-display-container');
+
+                data.questions.forEach(question => {
+                    const listItem = document.createElement('li');
+                    const questionText = document.createTextNode(question.question);
+
+                    listItem.appendChild(questionText);
+                    questionList.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error(error));
+    </script>
 </body>
 </html>

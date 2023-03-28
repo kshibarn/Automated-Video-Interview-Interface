@@ -4,3 +4,9 @@ from django.shortcuts import render
 
 def home(request):
     return render(request, "index.html")
+
+def interviewList(request):
+    return render(request, "InterviewList.html")
+
+def interview(request):
+    return render(request, "MainInterview.html")

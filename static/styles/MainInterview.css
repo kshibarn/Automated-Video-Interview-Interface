@@ -51,6 +51,17 @@
     gap: 2rem;
 }
 
+.question-box{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;                                                         
+}
+.question-box div:first-of-type{
+    background: rgba(255, 138, 0, 0.43);
+    border-radius: 50px;
+    padding: 5px;
+}
+
 button{
     background-color:rgba(70, 211, 255, 0.68);
     font-size: 20px;
