@@ -55,7 +55,7 @@
             console.log('Error accessing webcam:', error);
           });
       </script>
-
+    
       <script>
         function startTimer(duration) {
           var timer = duration, minutes, seconds;
@@ -75,12 +75,13 @@
         }
       </script>
 
+      {% block scripts %}
       <script type="application/json" src="{% static 'Interview-Questions/questions.json' %}"></script>
       <script>
-        fetch('questions.json')
+        fetch("{% static 'Interview-Questions/questions.json' %}")
             .then(response => response.json())
             .then(data => {
-                const questionList = document.getElementById('question-display-container');
+                const questionList = document.getElementById('question-box');
 
                 data.questions.forEach(question => {
                     const listItem = document.createElement('li');
@@ -92,5 +93,6 @@
             })
             .catch(error => console.error(error));
     </script>
+    {% endblock %}
 </body>
 </html>
