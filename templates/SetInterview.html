@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'styles/SetInterview.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+
+        <div class="heading-container">
+            <div class="design-heading">
+                <h1>SET INTERVIEW</h1>
+            </div>
+        </div>
+
+        <div class="paper-set-section">
+
+            <div class="company-details">
+                <div>
+                <label for="interviewName">Interview Name : </label>
+                <input type="text" name="interviewName">
+                </div>
+
+                <div>
+                    <label for="companyName">Company Name : </label>
+                    <input type="text" name="companyName">
+                </div>
+
+                <div>
+                    <label for="lastDate">Last Date : </label>
+                    <input type="date" name="lastDate">
+                </div>
+
+            </div>
+
+            <div class="question-container">
+
+                <div class="question-header">
+                    <h2>Questions</h2>
+                    <button data-addQuestion>Add Question</button>
+                    <h2>Time</h2>
+                </div>
+
+                <hr>
+
+                <div class="question-bank">
+
+                    <ol class="question-template" data-questionTemplate>
+                        <li class="question-box">
+                            <div>what is MergSort ? Explain the algorithm and time complexity.</div>
+                            <div>3 min</div>
+                        </li>
+                        <li class="question-box">
+                            <div>difference between callback function & call by reference function.</div>
+                            <div>2.5 min</div>
+                        </li>
+                    </ol>
+                </div>
+
+
+
+                <div class="popup-adding-container">
+                    <div class="background-popup"></div>
+                    <form class="popup-form"> 
+                        <input type="text" placeholder="write Question" data-newQuestionInput>
+                        <input type="number" placeholder="time limit" data-timeLimitInput>
+                        <button data-add-submit-btn type="submit">Add</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="submit-btn">
+                <button>Submit</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

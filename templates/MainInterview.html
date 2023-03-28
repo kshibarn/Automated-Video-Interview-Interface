@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Interview</title>
+    <link rel="stylesheet" href="{% static 'styles/MainInterview.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="heading-container">
+            <div class="design-heading">
+                <h1>YOUR INTERVIEW</h1>                
+            </div>
+        </div>
+
+        <div class="interview-container">
+            <div class="question-display-container">
+                <p>Question no. <span>1</span> </p>
+                <p>What is Merge Sort? Explain its
+                     Algorithm with time complexity and space complexity .</p>
+            </div>
+
+            <div class="btn-timer-container">
+                <button onclick="startTimer(60)">Next</button>
+
+                <div id="timer">00:00</div>
+
+            </div>
+
+            <div id="webcam">
+                <video id="video" width="385" height="385" autoplay></video>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        navigator.mediaDevices.getUserMedia({ video: true })
+          .then(function(stream) {
+            var video = document.getElementById('video');
+            video.srcObject = stream;
+            video.play();
+          })
+          .catch(function(error) {
+            console.log('Error accessing webcam:', error);
+          });
+      </script>
+
+      <script>
+        function startTimer(duration) {
+          var timer = duration, minutes, seconds;
+          setInterval(function () {
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+  
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+  
+            document.getElementById("timer").innerHTML = minutes + ":" + seconds;
+  
+            if (--timer < 0) {
+              timer = duration;
+            }
+          }, 1000);
+        }
+      </script>
+</body>
+</html>

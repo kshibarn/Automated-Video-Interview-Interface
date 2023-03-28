@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+}
+
+.heading-container{
+    width: 100%;
+    background-color: rgba(255, 153, 0, 0.69);
+    display: flex;
+    justify-content: center;
+}
+.design-heading{
+    background-color: rgba(255, 207, 85, 1) ;
+    margin:10px ;
+    padding: 0 10px;
+    font-style: italic;
+    letter-spacing: 10px;
+}
+
+.interview-container{
+    width: 100%;
+    height: 90%;
+    max-height: fit-content;
+    background-color:  rgba(255, 211, 211, 1);
+    display: flex;
+    flex-direction: column;
+    align-items:start;
+    justify-content: center;
+    gap: 5rem;
+    padding: 10rem;
+    position: relative;
+    overflow:hidden;
+}
+
+.question-display-container{
+    max-width: 550px;
+    width: 550px;
+    padding: 2rem;
+    min-height: 250px;
+    background: rgba(217, 217, 217, 1);
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    gap: 2rem;
+}
+
+button{
+    background-color:rgba(70, 211, 255, 0.68);
+    font-size: 20px;
+    padding: 5px 25px;
+    letter-spacing: 4px;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: 1px;
+}
+
+.btn-timer-container{
+    max-width: 550px;
+    width: 550px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#timer{
+    all: unset;
+    background-color: rgba(252, 152, 212, 0.36);
+    padding: 10px;
+    border-radius: 20%;
+
+}
+
+#webcam{
+    border: 8px solid #0987FC;
+    max-width: 400px;
+    max-height: 400px;
+    position: absolute;
+    right: 10%; 
+}
+
+#video{
+    object-fit: cover;
+}
