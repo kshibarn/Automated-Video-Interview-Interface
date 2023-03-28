@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+width:100vw;
+height: 100vh;
+background: #F1E4CF;
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+
+.container button{
+    width: 469px;
+    height: 113px;
+    font-size: 3rem;
+    background: #FFB950;
+    box-shadow: 6px 6px 6px rgba(152, 96, 11, 0.44);
+    border-radius: 50px;
+    border: 1px solid ;
+}
