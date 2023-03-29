@@ -38,9 +38,12 @@
 
             </div>
 
-            <div id="webcam">
+            <form action="video_feed" method="POST">
+              {% csrf_token %}
+              <div id="webcam">
                 <video id="video" width="385" height="385" autoplay></video>
-            </div>
+              </div>
+            </form>
         </div>
     </div>
 
