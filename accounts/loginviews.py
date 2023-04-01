@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import auth
+from django.urls import reverse
 
 def login(request):
     if request.method == 'POST':
@@ -13,6 +14,11 @@ def login(request):
         if user is not None:
             auth.login(request, user)
             return redirect("/")
+        
+        elif user is not None and user.is_superuser:
+            # Redirect to custom admin panel
+            return redirect(reverse('adminPanel:admin_Panel'))
+        
         # If the user does not exist, display an error message and redirect to login page
         else:
             messages.info(request, 'Invalid Credentials')

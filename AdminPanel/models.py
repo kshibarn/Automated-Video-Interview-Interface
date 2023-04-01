@@ -13,6 +13,9 @@ class Set_Interview(models.Model):
     def __str__(self):
         return self.interview_name
     
+    class Meta:
+        app_label = 'AdminPanel'
+    
 class Check_Interview(models.Model):
     candidate_name = models.CharField(max_length=255)
     email_id = models.CharField(max_length=255, validators=[EmailValidator()])
@@ -26,3 +29,6 @@ class Check_Interview(models.Model):
 
     def __str__(self):
         return self.candidate_name
+    
+    class Meta:
+        app_label = 'AdminPanel'

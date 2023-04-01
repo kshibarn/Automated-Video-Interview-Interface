@@ -1,101 +1,97 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Interview</title>
-    <link rel="stylesheet" href="{% static 'styles/MainInterview.css' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Interview</title>
+  <link rel="stylesheet" href="{% static 'styles/MainInterview.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div class="wrapper">
-        <div class="heading-container">
-            <div class="design-heading">
-                <h1>YOUR INTERVIEW</h1>                
-            </div>
-        </div>
-
-        <div class="interview-container">
-            <div class="question-display-container">
-
-              <li class="question-box">
-                {% for question in questions %}
-                <div>Question no. <span>{{ question.id }}</span> </div>
-                <div>{{ question.question }}</div>
-              {% endfor %}
-              </li>
-
-            </div>
-
-            <div class="btn-timer-container">
-                <button onclick="startTimer(60)">Next</button>
-
-                <div id="timer">00:00</div>
-
-            </div>
-
-            <form action="video_feed" method="POST">
-              {% csrf_token %}
-              <div id="webcam">
-                <video id="video" width="385" height="385" autoplay></video>
-              </div>
-            </form>
-        </div>
+  <div class="wrapper">
+    <div class="heading-container">
+      <div class="design-heading">
+        <h1>YOUR INTERVIEW</h1>
+      </div>
     </div>
 
-    <script>
-        navigator.mediaDevices.getUserMedia({ video: true })
-          .then(function(stream) {
-            var video = document.getElementById('video');
-            video.srcObject = stream;
-            video.play();
-          })
-          .catch(function(error) {
-            console.log('Error accessing webcam:', error);
-          });
-      </script>
-    
-      <script>
-        function startTimer(duration) {
-          var timer = duration, minutes, seconds;
-          setInterval(function () {
-            minutes = parseInt(timer / 60, 10);
-            seconds = parseInt(timer % 60, 10);
-  
-            minutes = minutes < 10 ? "0" + minutes : minutes;
-            seconds = seconds < 10 ? "0" + seconds : seconds;
-  
-            document.getElementById("timer").innerHTML = minutes + ":" + seconds;
-  
-            if (--timer < 0) {
-              timer = duration;
-            }
-          }, 1000);
+    <div class="interview-container">
+      <div class="question-display-container">
+        <li id="question-box" class="question-box">
+          {% for question in questions %}
+          <div>Question no. <span>{{ question.id }}</span> </div>
+          <div>{{ question.question }}</div>
+          {% endfor %}
+        </li>
+      </div>
+
+      <div class="btn-timer-container">
+        <a href="/interview"></a><button onclick="startTimer(60)">Next</button></a>
+
+        <div id="timer">00:00</div>
+
+      </div>
+
+      {% csrf_token %}
+      <div id="webcam">
+        <video id="video" width="385" height="385" autoplay></video>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(function (stream) {
+        var video = document.getElementById('video');
+        video.srcObject = stream;
+        video.play();
+      })
+      .catch(function (error) {
+        console.log('Error accessing webcam:', error);
+      });
+  </script>
+
+  <script>
+    function startTimer(duration) {
+      var timer = duration, minutes, seconds;
+      setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        document.getElementById("timer").innerHTML = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+          timer = duration;
         }
-      </script>
+      }, 1000);
+    }
+  </script>
 
-      {% block scripts %}
-      <script type="application/json" src="{% static 'Interview-Questions/questions.json' %}"></script>
-      <script>
-        fetch("{% static 'Interview-Questions/questions.json' %}")
-            .then(response => response.json())
-            .then(data => {
-                const questionList = document.getElementById('question-box');
+  {% block scripts %}
+  <script type="application/json" src="{% static 'Interview-Questions/questions.json' %}"></script>
+  <script>
+    fetch("{% static 'Interview-Questions/questions.json' %}")
+      .then(response => response.json())
+      .then(data => {
+        const questionList = document.getElementById('question-box');
+        const randomIndex = Math.floor(Math.random() * data.questions.length);
+        const randomQuestion = data.questions[randomIndex].question;
+        const questionText = document.createTextNode(randomQuestion);
+        questionList.appendChild(questionText);
+      })
+      .catch(error => console.error(error));
+  </script>
+  {% endblock %}
 
-                data.questions.forEach(question => {
-                    const listItem = document.createElement('li');
-                    const questionText = document.createTextNode(question.question);
-
-                    listItem.appendChild(questionText);
-                    questionList.appendChild(listItem);
-                });
-            })
-            .catch(error => console.error(error));
-    </script>
-    {% endblock %}
 </body>
+
 </html>

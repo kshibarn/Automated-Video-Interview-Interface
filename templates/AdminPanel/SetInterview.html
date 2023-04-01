@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,8 +44,8 @@
 
             <div class="company-details">
                 <div>
-                <label for="interviewName">Interview Name : </label>
-                <input type="text" name="interviewName">
+                    <label for="interviewName">Interview Name : </label>
+                    <input type="text" name="interviewName">
                 </div>
 
                 <div>
@@ -72,17 +73,17 @@
                 <div class="question-bank">
 
                     <ol class="question-template" data-questionTemplate>
-                        {% for question in questions %}
+                        {% for question in set_interview.questions.all %}
                         <li class="question-box">
                             <div>{{ question.question }}</div>
-                            <div>3 min</div>
+                            <div>{{ question.time_limit }} min</div>
                         </li>
                         {% endfor %}
 
-                        {% for question in questions %}
+                        {% for question in set_interview.questions.all %}
                         <li class="question-box">
                             <div>{{ question.question }}</div>
-                            <div>2.5 min</div>
+                            <div>{{ question.time_limit }} min</div>
                         </li>
                         {% endfor %}
                     </ol>
@@ -92,7 +93,7 @@
 
                 <div class="popup-adding-container">
                     <div class="background-popup"></div>
-                    <form class="popup-form"> 
+                    <form class="popup-form">
                         <input type="text" placeholder="write Question" data-newQuestionInput>
                         <input type="number" placeholder="time limit" data-timeLimitInput>
                         <button data-add-submit-btn type="submit">Add</button>
@@ -110,4 +111,5 @@
 
     <script src="{% static 'javascript/SetInterview.js' %}"></script>
 </body>
+
 </html>
