@@ -42,19 +42,20 @@
 
         <div class="paper-set-section">
 
+            {% for set in set_interview %}
             <div class="company-details">
                 <div>
-                    <label for="interviewName">Interview Name : </label>
+                    <label for="interviewName">{{set.interview_name}} : </label>
                     <input type="text" name="interviewName">
                 </div>
 
                 <div>
-                    <label for="companyName">Company Name : </label>
+                    <label for="companyName">{{set.company_name}} : </label>
                     <input type="text" name="companyName">
                 </div>
 
                 <div>
-                    <label for="lastDate">Last Date : </label>
+                    <label for="lastDate">{{set.last_date}} : </label>
                     <input type="date" name="lastDate">
                 </div>
 
@@ -62,28 +63,30 @@
 
             <div class="question-container">
 
+                {{ if set.question %}}
                 <div class="question-header">
                     <h2>Questions</h2>
                     <button data-addQuestion>Add Question</button>
                     <h2>Time</h2>
                 </div>
+                {{ endif %}}
 
                 <hr>
 
                 <div class="question-bank">
 
                     <ol class="question-template" data-questionTemplate>
-                        {% for question in set_interview.questions.all %}
+                        {% for set in set_interview.questions.all %}
                         <li class="question-box">
-                            <div>{{ question.question }}</div>
-                            <div>{{ question.time_limit }} min</div>
+                            <div>{{ set.question }}</div>
+                            <div>{{ set.time_limit }} min</div>
                         </li>
                         {% endfor %}
 
-                        {% for question in set_interview.questions.all %}
+                        {% for set in set_interview.questions.all %}
                         <li class="question-box">
-                            <div>{{ question.question }}</div>
-                            <div>{{ question.time_limit }} min</div>
+                            <div>{{ set.question }}</div>
+                            <div>{{ set.time_limit }} min</div>
                         </li>
                         {% endfor %}
                     </ol>

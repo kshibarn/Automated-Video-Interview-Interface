@@ -1,9 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from .models import Set_Interview, Check_Interview
 
 # Create your views here.
 
-def admin_Panel(request):
+def admin_panel(request):
     return render(request, "AdminPanel.html")
 
 def setInterview(request):

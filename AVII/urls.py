@@ -20,5 +20,5 @@ urlpatterns = [
     path('', include('Automated_Interface.urls')),
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
-    path('adminPanel/', include('AdminPanel.urls')),
+    path('adminPanel/', include('AdminPanel.urls'))
 ]
