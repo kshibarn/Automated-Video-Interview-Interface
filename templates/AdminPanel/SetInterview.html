@@ -60,16 +60,17 @@
                 </div>
 
             </div>
+            {% endfor %}
 
             <div class="question-container">
 
-                {{ if set.question %}}
+                
                 <div class="question-header">
                     <h2>Questions</h2>
                     <button data-addQuestion>Add Question</button>
                     <h2>Time</h2>
                 </div>
-                {{ endif %}}
+                
 
                 <hr>
 
@@ -105,7 +106,7 @@
             </div>
 
             <div class="submit-btn">
-                <button>Submit</button>
+                <a href="index.html"><button>Submit</button></a>
             </div>
 
         </div>

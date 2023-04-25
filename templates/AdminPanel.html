@@ -12,17 +12,8 @@
 
 <body>
     <div class="container">
-
-        <form action="setInterview" method="post">
-            {% csrf_token %}
-            <button class="btn btn-default btn-lg">Set Interview</button>
-        </form>
-
-        <form action="checkInterview" method="post">
-            {% csrf_token %}
-            <button class="btn btn-default btn-lg">Check Interview</button>
-        </form>
-
+        <a href="adminPanel/setInterview"><button class="btn btn-default btn-lg">Set Interview</button></a>
+        <a href="adminPanel/checkInterview"><button class="btn btn-default btn-lg">Check Interview</button></a>
     </div>
 </body>
 
