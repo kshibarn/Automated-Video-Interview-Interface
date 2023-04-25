@@ -10,3 +10,12 @@ def interviewList(request):
 
 def interview(request):
     return render(request, "MainInterview.html")
+
+def recorderWorker(request):
+    return render(request, 'recorderWorker.js')
+
+def webcamWorker(request):
+    return render(request, 'webcamWorker.js')
+
+def analyzeSpeech(request):
+    return render(request, 'analyzeSpeech.html')

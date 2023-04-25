@@ -1,0 +1,89 @@
+{% load static %}
+
+<!doctype html>
+<html>
+<head>
+	<title>AVII REPORT</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+	<script type="text/javascript" src="{% static 'styles/js/bootstrap.min.js' %}"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/styleReport.css' %}">
+
+</head>
+
+<body>
+	<div class="transBg">
+
+		<div class="container-fluid">
+
+		<div class="jumbotron"><h1>REPORT</h1></div>
+
+			<div class="row">
+
+				<div  class="jumbotron col-md-12">
+					<div class="col-md-6">
+						<h2>Speech rate</h2>
+						<p>You are speaking at the speed of {{average_velocity}} words per minute. The ideal rate for speaking at an interview is between 110 and 170. {{speech_speed}}</p>
+					</div>
+					<div class="col-md-6">
+						<img src="{% static 'Report/userMedia/speed.png' %}", alt="speedGraph">
+					</div>
+				</div>
+
+			<div class="row">
+
+				<div  class="jumbotron col-md-12">
+					<div class="col-md-6">
+						<h2>Most used words</h2>
+						<p>Here are your most used words. This is an unfiltered result, meaning that even small filler words are shown on the graph. </p>
+					</div>
+					<div class="col-md-6">
+						<img src="{% static 'Report/userMedia/freq.png' %}", alt="wordFreqGraph">
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+
+				<div  class="jumbotron col-md-12">
+					<div class="col-md-6">
+						<h2>Emotional Analysis</h2>
+						<p>Emotional distribution of your speech. The words you used were analysed and an emotional spectrum was generated.</p>
+					</div>
+					<div class="col-md-6 ">
+						<img src="{% static 'Report/userMedia/emo.png' %}", alt="wordFreqGraph">
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+
+				<div  class="jumbotron col-md-12">
+					<div class="col-md-6">
+						<h2>Word Cloud</h2>
+						<p>Your most relevant concepts. Here you can see keywords that were characteristic of your interview.</p>
+					</div>
+					<div class="col-md-6 ">
+						<img src="{% static 'Report/userMedia/wordcloud.jpg' %}", alt="wordFreqGraph">
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+
+				<div  class="jumbotron col-md-12">
+					<div class="col-md-8">
+						<h2>Face recognition</h2>
+						<p> {{appearance_str}}</p>
+					</div>
+					<div class="col-md-4 ">
+						<img src="{% static 'Report/userMedia/user_photo.png' %}", alt="user_photo">
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</body>
+
+</html>

@@ -40,7 +40,7 @@
       </div> -->
 
       <div class="btn-timer-container">
-        <form id="form" action="/analyzeSpeech" enctype="multipart/form-data" method="post">
+        <form id="form" action="/analyzeSpeech" method="post">
           {% csrf_token %}
           <input type="hidden" id="user_speech_b64code" name="user_speech_b64code" value="#" width="50">
 

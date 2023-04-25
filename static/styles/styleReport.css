@@ -1,0 +1,38 @@
+
+html, body{
+	height:100%;
+	margin:0;
+	padding:0;
+	background: white url("../../media/backgroundRecorder.jpg");
+	background-size:cover;
+}
+
+.container-fluid{
+  height:100%;
+  width: 100%;
+  padding: 0;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.transBg {
+	height: 275vh;
+	background: rgba(0, 167, 221, 0.70);
+}
+
+.jumbotron {
+	font-size: 20px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.clear {
+	clear: both;
+}
+
+h1 { color: rgba(0, 160, 255, 1); font-family: 'Raleway',sans-serif; font-size: 70px; font-weight: 800; line-height: 40px; margin: 0 0 44px; text-align: center; }
+
+h2 { color: rgba(0, 167, 225, 1); font-family: 'Raleway',sans-serif; font-size: 55px; font-weight: 800; line-height: 40px; margin: 0 0 44px; text-align: center; }
+
+
+p { color: #404040; font-family: 'Raleway',sans-serif; font-size: 38px; font-weight: 500; line-height: 50px; margin: 0 0 24px; }
